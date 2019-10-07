@@ -1,8 +1,9 @@
 
 /* Dependencies */
 var mongoose = require('mongoose'), 
-    Listing = require('../models/listings.server.model.js');
+    Listing = require('../models/listings.server.model.js'),
     coordinates = require('./coordinates.server.controller.js');
+
 /*
   In this file, you should use Mongoose queries in order to retrieve/add/remove/update listings.
   On an error you should send a 404 status code, as well as the error message. 
