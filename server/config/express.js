@@ -20,14 +20,20 @@ module.exports.init = function() {
   //body parsing middleware 
   app.use(bodyParser.json());
 
+  app.use('/', express.static('public'));
+
+  app.use('/api/listings', listingsRouter);
+
   /* server wrapper around Google Maps API to get latitude + longitude coordinates from address */
   app.post('/api/coordinates', getCoordinates, function(req, res) {
     res.send(req.results);
   });
 
   /* serve static files */
-  
-
+  app.all('/*', function(req, res) {
+     res.sendFile( path.resolve('client/index.html'))
+   });
+   
   /* use the listings router for requests to the api */
 
 

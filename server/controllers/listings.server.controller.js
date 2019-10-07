@@ -67,11 +67,12 @@ exports.update = function(req, res) {
     } else {
       res.json(listing);
     }
+  });
 
   /* Replace the article's properties with the new properties found in req.body */
   /* save the coordinates (located in req.results if there is an address property) */
   /* Save the article */
-});
+};
 
 /* Delete a listing */
 exports.delete = function(req, res) {
